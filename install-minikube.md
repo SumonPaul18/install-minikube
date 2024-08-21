@@ -145,8 +145,9 @@ List of Kubernetes Nodes:
 
 Output as like as 
 
-> NAME       STATUS   ROLES           AGE   VERSION
-> minikube   Ready    control-plane   25h   v1.28.3
+NAME       STATUS   ROLES           AGE   VERSION
+
+minikube   Ready    control-plane   25h   v1.28.3
 
 View cluster events
     kubectl get events
