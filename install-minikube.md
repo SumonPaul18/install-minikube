@@ -216,11 +216,11 @@ Now, check if the service was changed successfully by giving the following comma
 
 It will open the Kubernetes dashboard in the web browser.
 
-#kubectl proxy --address='0.0.0.0' --disable-filter=true
-#kubectl proxy --address='0.0.0.0' --accept-hosts='^*$'
-#kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$'
+> kubectl proxy --address='0.0.0.0' --disable-filter=true
+> kubectl proxy --address='0.0.0.0' --accept-hosts='^*$'
+> kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$'
 
-kubectl -n kubernetes-dashboard describe service kubernetes-dashboard
+    kubectl -n kubernetes-dashboard describe service kubernetes-dashboard
 
 +++++++++++++++++++++++++++++++++++
 
