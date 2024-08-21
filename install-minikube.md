@@ -6,7 +6,7 @@ Installation Steps
   - Step 1: Installing Docker
   - Step 2: Update Your System
 
-  apt update & sudo apt upgrade -y
+    apt update & sudo apt upgrade -y
 
 #Reboot the system
 
