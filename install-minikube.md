@@ -62,51 +62,51 @@ Verifying kubectl version Output in YML Format
 
     kubectl version --client --output=yaml
 
-
-#Step 4. Installing kubectl utility
+Step 4: Installing kubectl utility
 
 #curl -LO https://storage.googleapis.com/kubernetes-release/release/"curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt"/bin/linux/amd64/kubectl
 
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
-#Validate the binary (optional)
-#Download the kubectl checksum file:
+Validate the binary (optional)
 
-chmod +x kubectl
+Download the kubectl checksum file:
 
-mv kubectl /usr/local/bin/
+    chmod +x kubectl
+    mv kubectl /usr/local/bin/
 
-#Verify the kubectl version
+Verify the kubectl version
 
-kubectl version
+    kubectl version
+####
+    kubectl version -o yaml
 
-#kubectl version -o yaml
+Step 5: Starting Minikube
 
-#Step 5. Starting Minikube
-#When you start minikube 1st time then declear your required driver its could be docker, containerd, virtualbox etc. 
+When you start minikube 1st time then declear your required driver its could be docker, containerd, virtualbox etc. 
 
-minikube start –driver=docker
+    minikube start –driver=docker
 
-#In case Minikube cannot start because there is error regarding the Docker driver. Possible error:
+In case Minikube cannot start because there is error regarding the Docker driver. Possible error:
 
-minikube start --driver=docker --force
+    minikube start --driver=docker --force
 
-#Step 6. Verifying Installation
-#Use the following command to verify Minikube:
+Step 6: Verifying Installation
 
-minikube status
+Use the following command to verify Minikube:
 
-#Output As like As
+    minikube status
 
-minikube
-type: Control Plane
-host: Running
-kubelet: Running
-apiserver: Running
-kubeconfig: Configured
+Output As like As
 
+> minikube<br>
+> type: Control Plane<br>
+> host: Running<br>
+> kubelet: Running<br>
+> apiserver: Running<br>
+> kubeconfig: Configured<br>
 
-#Use the following command to verify Kubernetes:
+Use the following command to verify Kubernetes:
 
 kubectl cluster-info
 
