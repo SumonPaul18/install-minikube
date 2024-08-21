@@ -53,10 +53,14 @@ Verifying Minikube installation
 > minikube version: v1.32.0<br>
 > commit: 8220a6eb95f0a4d75f7f2d7b14cef975f050512d<br>
 
+####
+Verifying kubectl version
 
-kubectl version --client
+    kubectl version --client
+####
+Verifying kubectl version Output in YML Format
 
-#kubectl version --client --output=yaml
+    kubectl version --client --output=yaml
 
 
 #Step 4. Installing kubectl utility
