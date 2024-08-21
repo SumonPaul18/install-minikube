@@ -139,20 +139,20 @@ Continuously watching kubernetes all services
 
     watch kubectl get all -o wide
 
-#List of Kubernetes Nodes:
+List of Kubernetes Nodes:
 
-kubectl get nodes
+    kubectl get nodes
 
-#Output as like as 
+Output as like as 
 
-NAME       STATUS   ROLES           AGE   VERSION
-minikube   Ready    control-plane   25h   v1.28.3
+> NAME       STATUS   ROLES           AGE   VERSION
+> minikube   Ready    control-plane   25h   v1.28.3
 
-#View cluster events
-kubectl get events
+View cluster events
+    kubectl get events
 
-#View the kubectl configuration
-kubectl config view
+View the kubectl configuration
+    kubectl config view
 
 +++++++++++++++++++++++++++++++++
 + Managing Addons on minikube   +
