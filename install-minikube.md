@@ -9,9 +9,9 @@ Installation Steps
 ####
     apt update & sudo apt upgrade -y
 
-#Reboot the system
+Reboot the system
 
-reboot
+    reboot
 
 #Install Docker
 
