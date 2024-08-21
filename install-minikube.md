@@ -24,6 +24,7 @@ Install Docker
       "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
     tee /etc/apt/sources.list.d/docker.list > /dev/null
 
+
     sudo apt update
 
 Install docker by running the following command.
