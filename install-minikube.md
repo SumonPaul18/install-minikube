@@ -49,11 +49,9 @@ Verifying Minikube installation
 
     minikube version
 
-> Output As Like bellow:
-
-> minikube version: v1.32.0
-
-> commit: 8220a6eb95f0a4d75f7f2d7b14cef975f050512d
+> Output As Like bellow:<br>
+> minikube version: v1.32.0<br>
+> commit: 8220a6eb95f0a4d75f7f2d7b14cef975f050512d<br>
 
 
 kubectl version --client
