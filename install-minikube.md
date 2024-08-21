@@ -64,8 +64,6 @@ Verifying kubectl version Output in YML Format
 
 Step 4: Installing kubectl utility
 
-#curl -LO https://storage.googleapis.com/kubernetes-release/release/"curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt"/bin/linux/amd64/kubectl
-
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
 Validate the binary (optional)
@@ -108,38 +106,38 @@ Output As like As
 
 Use the following command to verify Kubernetes:
 
-kubectl cluster-info
+    kubectl cluster-info
 
-#Output like as:
+Output like as:
 
-Kubernetes control plane is running at https://192.168.49.2:8443
-CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+> Kubernetes control plane is running at https://192.168.49.2:8443
+> CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
-++++++++++++++++++++++++++++++++++
+#
 
-++++++++++++++++++++++++++++++++++
-+ Manage Minikube kubernetes     +
-++++++++++++++++++++++++++++++++++
-#Managing Minikube Cluster
-#To stop and start the minikube cluster
+### Manage Minikube kubernetes
 
-minikube stop
+Managing Minikube Cluster
 
-minikube start
+To stop and start the minikube cluster
 
-minikube start --force
+    minikube stop
+####
+    minikube start
+####
+    minikube start --force
 
-#In order to delete the minikube cluster
+In order to delete the minikube cluster
 
-minikube delete
+    minikube delete
 
-#delete the Service
+delete the Service
 
-kubectl delete services my-service
+    kubectl delete services my-service
 
-#Continuously watching kubernetes all services
+Continuously watching kubernetes all services
 
-watch kubectl get all -o wide
+    watch kubectl get all -o wide
 
 #List of Kubernetes Nodes:
 
