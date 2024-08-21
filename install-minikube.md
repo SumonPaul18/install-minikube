@@ -13,34 +13,29 @@ Reboot the system
 
     reboot
 
-#Install Docker
+Install Docker
 
-apt install ca-certificates curl gnupg wget apt-transport-https -y
+    apt install ca-certificates curl gnupg wget apt-transport-https -y
+    install -m 0755 -d /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    chmod a+r /etc/apt/keyrings/docker.gpg
+    echo \
+      "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+      "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+    tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-install -m 0755 -d /etc/apt/keyrings
+    sudo apt update
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+Install docker by running the following command.
 
-chmod a+r /etc/apt/keyrings/docker.gpg
-echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+    apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-tee /etc/apt/sources.list.d/docker.list > /dev/null
+Add your local user to docker group
 
-sudo apt update
+    sudo usermod -aG docker $USER
+    newgrp docker
 
-#Install docker by running the following command.
-
-apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-#Add your local user to docker group
-
-sudo usermod -aG docker $USER
-
-newgrp docker
-
-#Step 3. Installing Minikube
+Step 3: Installing Minikube
 #Use the following curl command to download latest minikube binary
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
