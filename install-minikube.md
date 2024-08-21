@@ -155,65 +155,66 @@ View cluster events
 View the kubectl configuration
     kubectl config view
 
-+++++++++++++++++++++++++++++++++
-+ Managing Addons on minikube   +
-+++++++++++++++++++++++++++++++++
+#
 
-minikube addons list
+Managing Addons on minikube
 
-#If you wish to enable any addons run the below minikube command,
+    minikube addons list
 
-minikube addons enable <addon-name>
+If you wish to enable any addons run the below minikube command,
 
-#Enable Dashboard Addons
+    minikube addons enable <addon-name>
 
-minikube addons enable dashboard
+Enable Dashboard Addons
 
-minikube addons enable ingress
+    minikube addons enable dashboard
+####
+    minikube addons enable ingress
 
-++++++++++++++++++++++++++++++++++++
+#
 
-++++++++++++++++++++++++++++++++++++++++++++
-+ Accessing Kubernetes Dashboard           +
-++++++++++++++++++++++++++++++++++++++++++++
 
-#Installing the Kubernetes Dashboard
+Accessing Kubernetes Dashboard
 
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml 
+Installing the Kubernetes Dashboard
 
-#Start kubernetes dashboard using Minikube
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml 
 
-minikube dashboard
+Start kubernetes dashboard using Minikube
 
-#List of Namespaces
+    minikube dashboard
 
-kubectl get services --all-namespaces
+List of Namespaces
 
-#Check all the resources
+    kubectl get services --all-namespaces
 
-kubectl get all -n kubernetes-dashboard
+Check all the resources
 
-#Accessing the Kubernetes Dashboard from Outside
+    kubectl get all -n kubernetes-dashboard
 
-#Easy Ways
-#Port Forwarding for kubernetes-dashboard
+Accessing the Kubernetes Dashboard from Outside
 
-kubectl port-forward -n kubernetes-dashboard service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+Easy Ways
 
-#https://192.168.0.89:10443
+Port Forwarding for kubernetes-dashboard
 
-#Another Ways
+    kubectl port-forward -n kubernetes-dashboard service/kubernetes-dashboard 10443:443 --address 0.0.0.0
 
-##We will have to change the type of service from ClusterIp to NodePort. So, give the following command to edit the service and make the following changes.
+https://192.168.0.89:10443
 
-kubectl edit service/kubernetes-dashboard -n kubernetes-dashboard
+Another Ways
 
-#After: You can give the IP of your wish if 32321 is occupied
-#Now, check if the service was changed successfully by giving the following command:
+We will have to change the type of service from ClusterIp to NodePort. So, give the following command to edit the service and make the following changes.
 
-kubectl get svc
+    kubectl edit service/kubernetes-dashboard -n kubernetes-dashboard
 
-#It will open the Kubernetes dashboard in the web browser.
+After: You can give the IP of your wish if 32321 is occupied
+
+Now, check if the service was changed successfully by giving the following command:
+
+    kubectl get svc
+
+It will open the Kubernetes dashboard in the web browser.
 
 #kubectl proxy --address='0.0.0.0' --disable-filter=true
 #kubectl proxy --address='0.0.0.0' --accept-hosts='^*$'
