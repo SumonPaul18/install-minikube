@@ -36,21 +36,22 @@ Add your local user to docker group
     newgrp docker
 
 Step 3: Installing Minikube
-#Use the following curl command to download latest minikube binary
 
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+Use the following curl command to download latest minikube binary
 
-#Once the binary is downloaded, use the following command to install Minikube
+    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
-install minikube-linux-amd64 /usr/local/bin/minikube
+Once the binary is downloaded, use the following command to install Minikube
 
-#Verifying Minikube installation
+    install minikube-linux-amd64 /usr/local/bin/minikube
 
-minikube version
+Verifying Minikube installation
 
-#Output As Like bellow:
-minikube version: v1.32.0
-commit: 8220a6eb95f0a4d75f7f2d7b14cef975f050512d
+    minikube version
+
+> Output As Like bellow:
+> minikube version: v1.32.0
+> commit: 8220a6eb95f0a4d75f7f2d7b14cef975f050512d
 
 
 kubectl version --client
